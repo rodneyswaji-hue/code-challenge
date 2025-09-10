@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speed Detector</title>
+</head>
+<body>
+  <h1>Speed Detector</h1>
+  <script>
+    //script tag helps us incoperate html with javascript
+    //script method helps in incoperating javascript with html since we require a window to run our code
+    // speed variabel stores a prompt that requires the user to input speed of car
+    let speed = parseInt(prompt("Enter the speed of the car (km/h):"));
+    // speedDetector function takes the speed variable and has a condition that compares the speed and speed limit
+    //returns ok or licence suspended or points depending on the speed
+    function speedDetector(speed) {
+      const speedLimit = 70;
+      const kmPerPoint = 5;
+
+      if (speed < speedLimit) {
+        return "Ok";
+      } else {
+        const points = Math.floor((speed - speedLimit) / kmPerPoint);
+        if (points > 12) {
+          return "License suspended";
+        } else {
+          return "Points: " + points;
+        }
+      }
+    }
+    // displays the results returned from speed and doesn't require user input
+    alert(speedDetector(speed));
+  </script>
+</body>
+</html>

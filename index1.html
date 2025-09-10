@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Grade Generator</title>
+</head>
+<body>
+  <h1>Student Grade Generator</h1>
+  <script>
+    //script tag helps us incoperate html with javascript
+    // marks varible changes the userInput from a string to an integer or number
+    // marks variable has a prompt that requires the student to enter the marks, returns null if nothing is entered or the prompts is cancelled
+    let marks = parseInt(prompt("Enter student marks (0 - 100):"));
+    //generateGrade functions has marks parameter and returns the grade
+    function generateGrade(marks) {
+    // if and else if statement compares the marks varible with grades
+    // if and else if statement doesn't require curly braces when written in one line
+    // doesn't allow grades above 100
+      if (marks > 79 && marks <= 100) return "A";
+      else if (marks >= 60 && marks <= 79) return "B";
+      else if (marks >= 49 && marks <= 59) return "C";
+      else if (marks >= 40 && marks < 49) return "D";
+      else if (marks >= 0 && marks < 40) return "E";
+      else return "Invalid input!";
+    }
+    //displays the string grade and the output of the function generateGrade to show the respective alphabetical grade
+    alert("Grade: " + generateGrade(marks));
+  </script>
+</body>
+</html>
